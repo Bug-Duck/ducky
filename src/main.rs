@@ -1,12 +1,12 @@
-use std::{error::Error, path::Path};
+use std::path::Path;
 
 use ducky::{
     models::{Repo, Stack},
-    requester::Requester,
+    requester::Requester, error::Result,
 };
 
 #[tokio::main]
-async fn main() -> Result<(), Box<dyn Error>> {
+async fn main() -> Result<()> {
     let requester = Requester::build()?;
 
     let stacks: Stack = requester
